@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Medication;
 
 class Medicationcontroller extends Controller
 {
@@ -23,7 +24,7 @@ class Medicationcontroller extends Controller
      */
     public function create()
     {
-        //
+        return view('medications.create');
     }
 
     /**
@@ -34,7 +35,15 @@ class Medicationcontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'drug_name'=>'string|required',
+            'drug_brand'=>'string|required',
+            'quantity'=>'integer|required'
+        ]);
+        Medication::unguard();
+        Medication::create($data);
+        $request->session()->flash('message','Drug Added Successfully');
+        return redirect()->back();
     }
 
     /**

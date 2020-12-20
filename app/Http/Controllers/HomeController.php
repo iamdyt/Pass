@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Appointment;
 
 class HomeController extends Controller
 {
@@ -13,6 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
+
         $this->middleware('auth');
     }
 
@@ -23,6 +25,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $request_count = Appointment::where('is_attended',0)->count();
+        return view('home', compact('request_count'));
+    }
+
+    public function destroy(Request $request){
+        $request->session()->flush();
+
+        auth()->logout();
+        return redirect()->route('login');
+
     }
 }

@@ -18,5 +18,18 @@ Route::get('/', function () {
 Route::prefix('staff')->group(function(){
     Auth::routes();
     Route::get('/patient', 'PatientController@index')->name('patient.index');
+    Route::post('/patient', 'Patientcontroller@create')->name('patient.create');
+    Route::get('/doctor', 'Physiciancontroller@create')->name('physician.create');
+    Route::post('/doctor', 'Physiciancontroller@store')->name('physician.store');
+    Route::get('/medication', 'Medicationcontroller@create')->name('medication.create');
+    Route::post('/medication', 'Medicationcontroller@store')->name('medication.store');
+    Route::get('/manage','Appointmentcontroller@manage')->name('appointment.manage');
+    Route::get('/logout', 'Homecontroller@destroy')->name('home.logout');
 });
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/book', 'Appointmentcontroller@index')->name('appointment.index');
+Route::get('/dashboard', 'Appointmentcontroller@show')->name('appointment.show')->middleware('patient.authenticate');
+Route::post('/schedule', "Appointmentcontroller@store")->name('appointment.store')->middleware('patient.authenticate');
+Route::get('/logout', 'Appointmentcontroller@destroy')->name('appointment.logout');
+
+
