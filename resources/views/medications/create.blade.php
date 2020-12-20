@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title')Drugs Inventory @endsection
-
 @section('content')
+@include('layouts.header')
     <div class="container">
         <div class="row">
             <div class="col-lg-6 offset-lg-3">

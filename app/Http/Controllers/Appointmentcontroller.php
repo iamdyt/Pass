@@ -9,6 +9,7 @@ use App\Appointment;
 class Appointmentcontroller extends Controller
 {
 
+    // Patients Login 
     public function index(Request $request)
     {
         $serial = $request->serial;
@@ -27,7 +28,7 @@ class Appointmentcontroller extends Controller
         
     }
 
-
+//Patient creating appointment
     public function store(Request $request)
     {
         Appointment::unguard();
@@ -44,27 +45,25 @@ class Appointmentcontroller extends Controller
         return redirect()->back();
     }
 
-
+//show appointment form to patient
     public function show()
     {
         return view('appointment.create');
     }
 
-    public function edit($id)
-    {
-        //
-    }
 
-
+// admin viewing submitted appointment
     public function manage(){
-        $appointment = Appointment::find(7);
-        $data = $appointment->patient->first_name;
-        return view('appointment.manage', compact('data'));
+        $appointments = Appointment::where('is_attended',0)->orderBy('id','DESC')->get();
+        return view('appointment.manage', compact('appointments'));
     }
 
-    public function update(Request $request, $id)
+    //Admin Scheduling appointment with patient and sending feedback message
+    public function single(Request $request, $id)
     {
-        //
+        $docs = \App\Physician::all();
+        $app = Appointment::findorFail($id);
+        return view('appointment.schedule', compact(['docs','app']));
     }
 
 

@@ -24,6 +24,7 @@ Route::prefix('staff')->group(function(){
     Route::get('/medication', 'Medicationcontroller@create')->name('medication.create');
     Route::post('/medication', 'Medicationcontroller@store')->name('medication.store');
     Route::get('/manage','Appointmentcontroller@manage')->name('appointment.manage');
+    Route::get('/manage/{id}', 'Appointmentcontroller@single')->name('appointment.single');
     Route::get('/logout', 'Homecontroller@destroy')->name('home.logout');
 });
 Route::get('/home', 'HomeController@index')->name('home');
