@@ -4,7 +4,7 @@
 @include('layouts.header')
     <section class="container">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-3 ">
                 @include('layouts.side')
             </div>
 
@@ -44,6 +44,7 @@
                         &copy LifeCare Hospital {{ date('Y')}} <span class="float-right">{{date('D/M/Y -- h:i:s', time())}}</span>
                     </div>
                 </div>
+                <div class="mt-2">{{$appointments->links()}}</div>
             </div>
 
             <div class="col-lg-3 invisible">

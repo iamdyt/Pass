@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card ">
     <div class="card-header"> <i class="fas fa-user"></i>&emsp; Administrator Panel</div>
     <div class="card-body">
         <p class="">Name: {{auth()->user()->name}}</p> <hr>

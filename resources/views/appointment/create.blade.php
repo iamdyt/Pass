@@ -1,14 +1,17 @@
 @extends('layouts.app')
 @section('title') Book An Appointment @endsection
 @section('content')
-    <section class="container">
-        <div class="row">
+    <section class="container ">
+    <h5 class="display-4 text-center mt-5 " style="color:#4f4f4f;">BOOK AN APPOINTMENT</h5>
+    <p class="lead text-center" style="color:#4f4f4f;">Welcome, kindly fill all fields correctly before submitting, <br>
+a notice of your schedule will be sent in few minutes.</p>
+        <div class="row mt-2">
             <div class="col-lg-6 offset-lg-3">
             @if(Session::has('message'))
                 <div class="alert alert-info">{{Session('message')}}</div>
             @endif
             
-                <div class="card">
+                <div class="card mb-4">
                     <div class="card-header">
                         <p>Book An Appointment <span class="float-right"> Card No: @if (Session::has('patient')) {{Session('patient')}} @endif </span></p>
                     </div>

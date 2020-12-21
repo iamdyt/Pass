@@ -29,7 +29,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Add Patient</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">All Patients</a>
+          <a class="dropdown-item" href="{{route('patient.all')}}">All Patients</a>
         </div>
       </li>
       <li class="nav-item dropdown">

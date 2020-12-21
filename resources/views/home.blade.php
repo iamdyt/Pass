@@ -52,4 +52,9 @@
         </div>
     </div>
 </div>
+<script>
+//     setInterval(() => {
+//         window.document.location.reload();
+//     }, 9000);
+// </script>
 @endsection

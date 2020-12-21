@@ -54,7 +54,7 @@ class Appointmentcontroller extends Controller
 
 // admin viewing submitted appointment
     public function manage(){
-        $appointments = Appointment::where('is_attended',0)->orderBy('id','DESC')->get();
+        $appointments = Appointment::where('is_attended',0)->orderBy('id','DESC')->simplePaginate(5);
         return view('appointment.manage', compact('appointments'));
     }
 

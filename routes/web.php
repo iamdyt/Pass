@@ -19,6 +19,8 @@ Route::prefix('staff')->group(function(){
     Auth::routes();
     Route::get('/patient', 'PatientController@index')->name('patient.index');
     Route::post('/patient', 'Patientcontroller@create')->name('patient.create');
+    Route::get('/patient/all',"Patientcontroller@all")->name('patient.all');
+    Route::get('/patient/allapi',"Patientcontroller@allapi")->name('patient.allapi');
     Route::get('/doctor', 'Physiciancontroller@create')->name('physician.create');
     Route::post('/doctor', 'Physiciancontroller@store')->name('physician.store');
     Route::get('/medication', 'Medicationcontroller@create')->name('medication.create');

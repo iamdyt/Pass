@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+
 use App\User;
 use App\Patient;
 
@@ -34,5 +36,13 @@ class Patientcontroller extends Controller
         Patient::create($validated_data);
         return redirect()->route('home');
         
+    }
+
+    public function all(){
+        return view('patients.all');
+    }
+    public function allapi(Response $response){
+        $patients = Patient::all();
+        return $patients;
     }
 }

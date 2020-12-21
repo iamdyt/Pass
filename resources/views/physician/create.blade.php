@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('title')Doctor's Management @endsection
-
 @section('content')
 @include('layouts.header')
     <div class="container">

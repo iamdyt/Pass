@@ -10,15 +10,20 @@
     <title>@yield('title')</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="{{ asset('js/app.js') }}" defer></script> 
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('fontawesome/css/all.min.css')}}">
+    
+   
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
 </head>
 <body>
     <div id="app">

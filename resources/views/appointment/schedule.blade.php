@@ -23,6 +23,8 @@
                                     <option value="{{$doc->first_name}}-{{$doc->last_name}}"> Dr. {{$doc->first_name}} - {{$doc->specialization}}</option>
                                 @endforeach
                             </select>
+                            <label for="date">Schedule Time:</label>
+                            <input type="datetime-local" name="date" class="form-control mb-2" id="">
                             <button class="btn btn-info btn-block"><i class="fas fa-cloud-upload-alt"></i>&emsp; Make Schedule</button>
                         </form>
                     </div>
