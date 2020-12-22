@@ -41,7 +41,7 @@ class Patientcontroller extends Controller
     public function all(){
         return view('patients.all');
     }
-    public function allapi(Response $response){
+    public function allapi(){
         $patients = Patient::all();
         return $patients;
     }

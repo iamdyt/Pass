@@ -23,6 +23,8 @@ Route::prefix('staff')->group(function(){
     Route::get('/patient/allapi',"Patientcontroller@allapi")->name('patient.allapi');
     Route::get('/doctor', 'Physiciancontroller@create')->name('physician.create');
     Route::post('/doctor', 'Physiciancontroller@store')->name('physician.store');
+    Route::get('/doctor/all',"Physiciancontroller@all")->name('physician.all');
+    Route::get('/doctor/allapi',"Physiciancontroller@allapi")->name('physician.allapi');
     Route::get('/medication', 'Medicationcontroller@create')->name('medication.create');
     Route::post('/medication', 'Medicationcontroller@store')->name('medication.store');
     Route::get('/manage','Appointmentcontroller@manage')->name('appointment.manage');

@@ -53,6 +53,14 @@ class Physiciancontroller extends Controller
         return redirect()->back();
     }
 
+    public function all(){
+        return view('physician.all');
+    }
+    public function allapi(){
+        $doctors = Physician::all();
+        return $doctors;
+    }
+
     /**
      * Display the specified resource.
      *
