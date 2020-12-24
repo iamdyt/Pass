@@ -65,8 +65,13 @@ class Appointmentcontroller extends Controller
         $app = Appointment::findorFail($id);
         return view('appointment.schedule', compact(['docs','app']));
     }
-
-
+// update attended schedule
+    public function update(Request $request, $id){
+        $app = Appointment::find($id);
+        $app->is_attended = 1;
+        $app->save();
+        return ['ok'];
+    }
     public function destroy(Request $request)
     {
         $request->session()->flush();

@@ -25,7 +25,7 @@
                             </select>
                             <label for="date">Schedule Date and Time:</label>
                             <input type="date" name="date" class="form-control mb-2" id="date">
-                            <input type="text" name="time" maxlength=7 class="form-control mb-2" required=required placeholder="Time e.g 9:40AM" id="time">
+                            <input type="time" name="time" min="08:00" max="20:00" class="form-control mb-2" required=required placeholder="Time e.g 9:40AM" id="time">
                             <button type="button"  onclick="schedule()" class="btn btn-info btn-block"><i class="fas fa-cloud-upload-alt"></i>&emsp; Make Schedule</button>
                         </form>
                     </div>
@@ -54,9 +54,16 @@
                             'Schedule Sent Successfully',
                             'success'
                             )
-                            setTimeout(() => {
-                                window.location.href="/staff/manage"
-                            }, 2000);
+                            $.ajax({
+                                url:'/staff/update/{{$app->id}}',
+                                method:'GET',
+                                success:function(){
+                                    setTimeout(() => {
+                                    window.location.href="/staff/manage"
+                                    }, 1000);
+                                }
+                            });
+
                     },
                     completed: function(){
 

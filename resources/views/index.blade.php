@@ -6,7 +6,7 @@
             <div class="col-lg-6 offset-lg-3">
                 <div class="card" style="margin-top:10rem;">
                     <div class="card-header">
-                        <p class="text-center">Patient Authentication</p>
+                        <p class="text-center"><i class="fas fa-medkit"></i> &emsp; Patient Authentication</p>
                     </div>
                     <div class="card-body">
                         <form action="{{route('appointment.index')}}" method="POST" class="form-group">
